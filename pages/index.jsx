@@ -6,8 +6,8 @@ import Preview from '../components/Preview';
 export default function Home() {
     const [step, setStep] = useState(1);
 
-    const nextStep = () => setStep(step + 1);
-    const prevStep = () => setStep(step - 1);
+    const nextStep = () => setStep((currentStep) => currentStep + 1);
+    const prevStep = (steps = 1) => setStep((currentStep) => currentStep - steps);
 
     const [formData, setFormData] = useState({
         clientName: '',
@@ -72,7 +72,6 @@ export default function Home() {
     };
 
     return (
-        
         <div>
             {step === 1 && (
                 <TestimonialForm
@@ -93,7 +92,7 @@ export default function Home() {
                 <Preview
                     formData={formData}
                     submitForm={submitForm}
-                    prevStep={prevStep}
+                    prevStep={() => prevStep(2)}
                 />
             )}
         </div>
