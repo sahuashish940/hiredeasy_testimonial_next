@@ -80,7 +80,6 @@ export default function Preview({ formData, submitForm, prevStep }) {
             <div className="flex justify-between mt-8">
               <button
                 type="button"
-                // here is the change 
                 onClick={() => prevStep(2)} // Pass 2 as an argument to go back two steps
                 className="px-6 py-3 bg-gray-300 text-gray-700 font-medium rounded-lg hover:bg-gray-400 transition duration-300 shadow-lg"
               >
